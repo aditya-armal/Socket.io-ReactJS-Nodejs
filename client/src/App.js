@@ -26,6 +26,7 @@ function App() {
     setRoom('')
     setCurrentRoom('');
     setMessageReceived('');
+    setDisabled(true);
   };
 
   const sendMessage = () => {
@@ -76,7 +77,6 @@ function App() {
           </Menu.Item>
       </Menu>
       
-      {/* <div style={{textAlign:"center"}}> */}
       <div className="ui feed">
       {messageReceived.length > 0 ? (
         messageReceived.map((message, index) => (
@@ -93,7 +93,9 @@ function App() {
           </div>
         ))
       ) : (
+        <div style={{textAlign:"center"}}>
         <p>No messages available</p>
+        </div>
       )}
     </div>
 
